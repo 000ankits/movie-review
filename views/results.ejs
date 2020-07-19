@@ -1,0 +1,16 @@
+<% include ./partials/header %>
+
+<div class="row text-center">
+    <% results.forEach(result=>{ %>
+        <div class="col-3 pb-3">
+            <div>
+                <img class="img-thumbnail mb-2" src=<%= result.Poster %> alt="">
+            </div>
+            <div>
+                <h5><%= result.Title %></h5>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<% include ./partials/footer %>

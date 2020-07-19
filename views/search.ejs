@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<div class="row">
+    <div class="col-12">
+        <form action="/searchmovie" method="POST" id="movieSearch" style="margin-top: 20%;">
+            <div class="form-group d-flex">
+                <select name="type" class="form-control mr-1" style="max-width: 100px;">
+                    <option value="" selected>All</option>
+                    <option value="Movie">Movie</option>
+                    <option value="Series">Series</option>
+                    <option value="Episodes">Episodes</option>
+                </select>
+                <input name="name" type="text" class="form-control mr-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+        </form>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

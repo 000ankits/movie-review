@@ -18,10 +18,14 @@
   "homepage": "https://github.com/000ankits/movie-review#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "dotenv": "^8.2.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "method-override": "^3.0.0",
-    "mongoose": "^5.7.5"
+    "mongoose": "^5.7.5",
+    "pg": "^8.3.0",
+    "superagent": "^5.3.1"
   }
 }
