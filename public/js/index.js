@@ -1,9 +1,9 @@
-const comText = document.querySelector('#commentText');
-const comSubBtn = document.querySelector('#submitComment');
-const comCancBtn = document.querySelector('#cancelComment');
-const comCreateBtn = document.querySelector('#createComment');
+const comText = document.querySelector('#reviewText');
+const comSubBtn = document.querySelector('#submitReview');
+const comCancBtn = document.querySelector('#cancelReview');
+const comCreateBtn = document.querySelector('#createReview');
 
-function commentCreate() {
+function reviewCreate() {
 	comText.value = '';
 	comText.style.display = 'block';
 	comSubBtn.style.display = 'block';
@@ -11,7 +11,7 @@ function commentCreate() {
 	comCreateBtn.style.display = 'none';
 }
 
-function cancelComment() {
+function cancelReview() {
 	comText.value = '';
 	comText.style.display = 'none';
 	comSubBtn.style.display = 'none';
@@ -19,10 +19,10 @@ function cancelComment() {
 	comCreateBtn.style.display = 'block';
 }
 
-function submitComment() {
+function submitReview() {
 	comText.style.display = 'none';
 	comSubBtn.style.display = 'none';
 	comCancBtn.style.display = 'none';
 	comCreateBtn.style.display = 'block';
-	document.querySelector('#commentForm').submit();
+	document.querySelector('#reviewForm').submit();
 }

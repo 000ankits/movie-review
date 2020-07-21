@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">MvRv</a>
+        <a class="navbar-brand" href="/">MvRvw</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a class="nav-link" href="/">Something</a>
@@ -22,12 +22,21 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/register">Register</a>
-            </li>
+            <% if(currentUser === undefined){ %>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+            <% } else{ %>
+              <li class="nav-item">
+                <p class="nav-link active">Signed in as.. <%= currentUser %></p>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            <% } %>
           </ul>
         </div>
       </nav>

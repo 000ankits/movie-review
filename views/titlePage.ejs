@@ -27,22 +27,22 @@
         <hr>
 
         <div class="d-flex">
-            <div class="mr-auto">Comments:</div>
-            <a id="submitComment" class="btn btn-sm btn-secondary ml-auto" onclick='submitComment()' style="display: none; width: max-content;" >ok</a>
-            <a id="cancelComment" class="btn btn-sm btn-secondary ml-auto" onclick='cancelComment()' style="display: none; width: max-content;" >X</a>
-            <a id="createComment" class="btn btn-sm btn-secondary ml-auto" onclick='commentCreate()'>+</a>
+            <div class="mr-auto">Reviews:</div>
+            <a id="submitReview" class="btn btn-sm btn-secondary ml-auto" onclick='submitReview()' style="display: none; width: max-content;" >ok</a>
+            <a id="cancelReview" class="btn btn-sm btn-secondary ml-auto" onclick='cancelReview()' style="display: none; width: max-content;" >X</a>
+            <a id="createReview" class="btn btn-sm btn-secondary ml-auto" onclick='reviewCreate()'>+</a>
         </div>
         <div>
-            <form id="commentForm" action="/createComment/<%= title.imdbID %>" method="POST">
-                <textarea name="commentText" id="commentText" class="form-control mt-2" aria-label="With textarea"  style="display:none" ></textarea>
+            <form id="reviewForm" action="/createReview/<%= title.imdbID %>" method="POST">
+                <textarea name="reviewText" id="reviewText" class="form-control mt-2" aria-label="With textarea"  style="display:none" ></textarea>
             </form>
         </div>
         <hr>
         <div>
-            <% comments.forEach(comment=>{ %>
+            <% reviews.forEach(review=>{ %>
                 <div>
-                    <p><%= comment.text %></p>
-                    <p class="text-right">Uploaded by.. <%= comment.username %></p>
+                    <p><%= review.text %></p>
+                    <p class="text-right">Uploaded by.. <%= review.username %></p>
                 </div>
                 <hr>
             <% }) %>
