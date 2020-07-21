@@ -2,13 +2,15 @@
 
 <div class="row text-center">
     <% results.forEach(result=>{ %>
-        <div class="col-3 pb-3">
-            <div>
-                <img class="img-thumbnail mb-2" src=<%= result.Poster %> alt="">
-            </div>
-            <div>
-                <h5><%= result.Title %></h5>
-            </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 pb-3">
+            <a href="/results/<%= result.imdbID %>"">
+                <div>
+                    <img class="img-thumbnail mb-2" src=<%= result.Poster %> alt="">
+                </div>
+                <div>
+                    <h5><%= result.Title %></h5>
+                </div>
+            </a>
         </div>
     <% }) %>
 </div>

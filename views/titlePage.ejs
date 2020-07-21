@@ -1,0 +1,53 @@
+<% include ./partials/header %>
+
+<div class="row">
+    <div class="col-5 pt-3">
+        <div>
+            <img class="img-thumbnail " src=<%= title.Poster %> alt="">
+        </div>
+        <div class="pt-3">
+            <h3><%= title.Title %></h3>
+        </div>
+        <a href="/results">Back to results</a>
+    </div>
+
+    <div class="col-7 pt-3">
+        <div>
+            <p class="text-center">PLOT:</p>
+            <h4><%= title.Plot %></h4>
+        </div>
+        <hr>
+        <div class="pt-3 mr-auto">
+            <h4>Actors: <%= title.Actors %></h4>
+        </div>
+        <hr>
+        <div class="pt-3">
+            <h4>Genres: <%= title.Genre %></h4>
+        </div>
+        <hr>
+
+        <div class="d-flex">
+            <div class="mr-auto">Comments:</div>
+            <a id="submitComment" class="btn btn-sm btn-secondary ml-auto" onclick='submitComment()' style="display: none; width: max-content;" >ok</a>
+            <a id="cancelComment" class="btn btn-sm btn-secondary ml-auto" onclick='cancelComment()' style="display: none; width: max-content;" >X</a>
+            <a id="createComment" class="btn btn-sm btn-secondary ml-auto" onclick='commentCreate()'>+</a>
+        </div>
+        <div>
+            <form id="commentForm" action="/createComment/<%= title.imdbID %>" method="POST">
+                <textarea name="commentText" id="commentText" class="form-control mt-2" aria-label="With textarea"  style="display:none" ></textarea>
+            </form>
+        </div>
+        <hr>
+        <div>
+            <% comments.forEach(comment=>{ %>
+                <div>
+                    <p><%= comment.text %></p>
+                    <p class="text-right">Uploaded by.. <%= comment.username %></p>
+                </div>
+                <hr>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
